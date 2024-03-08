@@ -69,7 +69,7 @@ btn_couleur = tk.Button(root, text = "Choisir une couleur", command = couleur)
 btn_cercle = tk.Button(frame_button, text = "Cerlce", foreground= "Blue", font= ("Helvetica",12, "bold"), command= cercle)
 btn_carre = tk.Button(frame_button, text = "Carré", foreground= "Green", command = carre)
 btn_croix = tk.Button(frame_button, text = "Croix", foreground= "Red", font= ("italic", 12), command = croix)
-canva_1 = tk.Canvas(root, bg = "white", width= canva_largeur, height= canva_longeur, relief = "sunken",borderwidth = 0, highlightthickness=0, highlightbackground="brown")
+canva_1 = tk.Canvas(root, bg = "black", width= canva_largeur, height= canva_longeur, relief = "sunken",borderwidth = 0, highlightthickness=0, highlightbackground="brown")
 
 frame_button.grid(row = 1, column=0)
 btn_couleur.grid(row = 0, column= 1)
