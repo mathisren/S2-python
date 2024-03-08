@@ -10,29 +10,34 @@ frame_button = tk.Frame(root)
 
 couleur_dessin = "Blue"
 
+# Correction cercle :
 
 def cercle():
+    x= random.randint(0,canva_largeur)
+    y = random.randint(0,canva_longeur)
+    canva_1.create_oval(x-50, y + 50, x + 50, y - 50, fill = "Blue")
+def cercle_1():
     point_aleatoire_largeur = random.randint(0,canva_largeur)
     point_aleatoire_lonngeur = random.randint(0,canva_longeur)
-    if (point_aleatoire_lonngeur ) -50   >= 0 and (point_aleatoire_largeur ) -50 >= 0 and (point_aleatoire_lonngeur ) +50 >= canva_longeur and (point_aleatoire_largeur ) + 50 >= canva_largeur:
-        canva_1.create_oval(  ((point_aleatoire_lonngeur ) -50    , (point_aleatoire_largeur) -50     )   , ( (point_aleatoire_lonngeur) + 50  , (point_aleatoire_largeur) + 50 )   , width = 5, outline = couleur_dessin)
+    if (point_aleatoire_lonngeur ) -50   >= 0 and (point_aleatoire_largeur ) -50 >= 0 and (point_aleatoire_lonngeur ) +50 < canva_longeur and (point_aleatoire_largeur ) + 50 < canva_largeur:
+        canva_1.create_oval(  ((point_aleatoire_lonngeur ) -50    , (point_aleatoire_largeur) -50     )   , ( (point_aleatoire_lonngeur) + 50  , (point_aleatoire_largeur) + 50 )   , width = 5, fill = couleur_dessin)
     else:
         while point_aleatoire_lonngeur  -50   <= 0 or point_aleatoire_largeur -50 <= 0 or point_aleatoire_lonngeur  +50 >= canva_longeur or point_aleatoire_largeur + 50 >= canva_largeur:
                 point_aleatoire_largeur = random.randint(0,canva_largeur)
                 point_aleatoire_lonngeur = random.randint(0,canva_longeur)
-        canva_1.create_oval(  ((point_aleatoire_lonngeur ) -50    , (point_aleatoire_largeur ) -50     )   , ( (point_aleatoire_lonngeur ) + 50  , (point_aleatoire_largeur ) + 50 )   , width = 1, outline = couleur_dessin)
+        canva_1.create_oval(  ((point_aleatoire_lonngeur ) -50    , (point_aleatoire_largeur ) -50     )   , ( (point_aleatoire_lonngeur ) + 50  , (point_aleatoire_largeur ) + 50 )   , width = 1, fill = couleur_dessin)
 
 
 def carre():
     point_aleatoire_largeur = random.randint(0,canva_largeur)
     point_aleatoire_longeur = random.randint(0,canva_longeur)
     if point_aleatoire_largeur + 100 < canva_largeur and point_aleatoire_longeur + 100 < canva_longeur:
-         canva_1.create_rectangle( (  point_aleatoire_largeur , point_aleatoire_longeur   )   ,  ( point_aleatoire_largeur  + 100, point_aleatoire_longeur  + 100 ), outline = couleur_dessin)
+         canva_1.create_rectangle( (  point_aleatoire_largeur , point_aleatoire_longeur   )   ,  ( point_aleatoire_largeur  + 100, point_aleatoire_longeur  + 100 ), outline = couleur_dessin, width = 5)
     else:
         while point_aleatoire_largeur + 100 > canva_largeur or point_aleatoire_longeur + 100 > canva_longeur:
             point_aleatoire_largeur = random.randint(0,canva_largeur)
             point_aleatoire_longeur = random.randint(0,canva_longeur)
-        canva_1.create_rectangle( (  point_aleatoire_largeur , point_aleatoire_longeur   )   ,  ( point_aleatoire_largeur  + 100, point_aleatoire_longeur  + 100 ), outline = couleur_dessin)
+        canva_1.create_rectangle( (  point_aleatoire_largeur , point_aleatoire_longeur   )   ,  ( point_aleatoire_largeur  + 100, point_aleatoire_longeur  + 100 ), outline = couleur_dessin, width = 1)
 
 def croix():
     point_aleatoire_largeur = random.randint(0,canva_largeur)
@@ -42,8 +47,8 @@ def croix():
     point_C_1, point_C_2 = point_aleatoire_largeur + 50, point_aleatoire_longeur + 50
     point_D_1, point_D_2 = point_aleatoire_largeur + 50, point_aleatoire_longeur - 50
     if point_A_1 > 0 and point_A_2 > 0 and point_C_1 < canva_largeur and point_C_2 < canva_longeur:
-         canva_1.create_line((point_A_1, point_A_2), (point_C_1, point_C_2), fill = couleur_dessin)
-         canva_1.create_line((point_D_1, point_D_2), (point_B_1, point_B_2), fill = couleur_dessin)
+         canva_1.create_line((point_A_1, point_A_2), (point_C_1, point_C_2), fill = couleur_dessin, width = 5)
+         canva_1.create_line((point_D_1, point_D_2), (point_B_1, point_B_2), fill = couleur_dessin, width = 5)
     else:
          print("HORS")
          while point_A_1 <= 0 or point_A_2 <= 0 or point_C_1 >= canva_largeur or point_C_2 >= canva_longeur:
@@ -53,8 +58,8 @@ def croix():
             point_B_1, point_B_2 = point_aleatoire_largeur - 50, point_aleatoire_longeur + 50
             point_C_1, point_C_2 = point_aleatoire_largeur + 50, point_aleatoire_longeur + 50
             point_D_1, point_D_2 = point_aleatoire_largeur + 50, point_aleatoire_longeur - 50
-         canva_1.create_line((point_A_1, point_A_2), (point_C_1, point_C_2), fill = couleur_dessin)
-         canva_1.create_line((point_D_1, point_D_2), (point_B_1, point_B_2), fill = couleur_dessin)
+         canva_1.create_line((point_A_1, point_A_2), (point_C_1, point_C_2), fill = couleur_dessin, width = 1)
+         canva_1.create_line((point_D_1, point_D_2), (point_B_1, point_B_2), fill = couleur_dessin, width = 1)
 
 
 def couleur():
