@@ -27,9 +27,15 @@ def degrade_gris ():
         for j in range(264):
             canva.create_rectangle(i,j,i,j, fill = color, width=0)
 
+def degrade_2D ():
+    for i in range(264):
+        color = get_color(255 - i, 0, 255-i)
+        for j in range(264):
+            canva.create_rectangle(i,j,i,j, fill = color, width=0)
+
 btn_aleatoire = tk.Button(frame_btn, text = "Aléatoire", foreground= "blue", command= ecran_aleatoire)
 btn_degrade = tk.Button(frame_btn, text = "Dégradé gris", foreground = "blue", command= degrade_gris)
-btn_degrade_2D = tk.Button(frame_btn, text = "Dégradé 2D", foreground = "Blue")
+btn_degrade_2D = tk.Button(frame_btn, text = "Dégradé 2D", foreground = "Blue", command= degrade_2D)
 
 
 btn_aleatoire.grid(pady = 10)
